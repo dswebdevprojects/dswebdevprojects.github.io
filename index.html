@@ -21,12 +21,32 @@
         }
 
         header {
-            background-image: url('image.png');
-            background-size: cover;
-            background-position: center;
+            background-image: url('image.png'); /* Use the image as background */
+            background-size: cover; /* Make sure the image covers the header */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
             color: #fff;
-            padding: 60px 0;
+            padding: 80px 0; /* Adjust padding to control header height */
             text-align: center;
+            position: relative; /* Ensure the positioning context for child elements */
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+            z-index: 1; /* Place overlay above background image */
+        }
+
+        header h1,
+        header p,
+        .social-icons {
+            position: relative; /* Position text and icons above overlay */
+            z-index: 2;
         }
 
         header h1 {
@@ -159,16 +179,99 @@
     </style>
 </head>
 
+<body>
+    <header>
+        <h1>[Your Name] - Software Engineer</h1>
+        <p class="fade-in">Expertise in Python and AWS Development</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>As a Software Engineer, I specialize in backend development with Python and AWS, providing comprehensive solutions that cater to both functional and non-functional requirements. My expertise includes custom software development, cloud solutions architecture, cybersecurity, IT infrastructure optimization, and system modernization. I am passionate about building scalable, secure, and cost-effective software solutions that drive business success.</p>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience-item">
+                <h3>Custom Software Development</h3>
+                <p><strong>Requirement Analysis:</strong> Engaged with clients to gather business requirements, performing in-depth analysis to define both functional and non-functional needs.</p>
+                <p><strong>System Design:</strong> Developed scalable software architectures and intuitive UI/UX designs to ensure high performance and user satisfaction.</p>
+                <p><strong>Backend Development:</strong> Utilized Python and relevant frameworks to build robust backend systems, adhering to best practices for maintainability and scalability.</p>
+                <p><strong>Integration:</strong> Integrated diverse services and components to ensure seamless application functionality and interoperability.</p>
+                <p><strong>Testing and Deployment:</strong> Conducted unit and system testing, and managed deployment processes using automated CI/CD pipelines.</p>
+                <p><strong>Maintenance and Support:</strong> Provided ongoing support, implemented bug fixes, and released updates to enhance performance and functionality.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Cloud Solutions Architecture and Deployment with AWS</h3>
+                <p><strong>Requirement Analysis:</strong> Conducted needs assessments to determine cloud strategy, focusing on scalability, security, and cost-efficiency.</p>
+                <p><strong>AWS Cloud Architecture Design:</strong> Designed and implemented scalable AWS architectures utilizing services like EC2, S3, Lambda, RDS, and IAM to meet client requirements.</p>
+                <p><strong>Cloud Deployment and Migration:</strong> Managed the deployment and migration of applications to AWS, ensuring minimal downtime and seamless transitions.</p>
+                <p><strong>Security and Compliance:</strong> Implemented robust security measures using AWS security services, including encryption, access control, and VPC security groups.</p>
+                <p><strong>Performance Optimization:</strong> Regularly optimized cloud resources to enhance performance and reduce costs through auto-scaling and resource monitoring.</p>
+                <p><strong>Documentation and Support:</strong> Created detailed documentation for cloud infrastructure and provided ongoing support for cloud-based solutions.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Cybersecurity Best Practices in Software Development</h3>
+                <p><strong>Security Assessment and Planning:</strong> Conducted comprehensive security assessments and developed strategies to address identified vulnerabilities.</p>
+                <p><strong>Implementation of Security Measures:</strong> Integrated security solutions such as firewalls, intrusion detection systems, and data encryption into software applications.</p>
+                <p><strong>Vulnerability and Compliance Testing:</strong> Performed regular security testing, including penetration tests and vulnerability scans, to ensure compliance with industry standards.</p>
+                <p><strong>Training and Documentation:</strong> Provided security training to development teams and maintained documentation on security configurations and policies.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>IT Infrastructure Optimization and Management</h3>
+                <p><strong>Assessment and Optimization:</strong> Evaluated existing IT infrastructures to identify performance bottlenecks and implemented optimization strategies, including hardware upgrades and network improvements.</p>
+                <p><strong>Backend System Enhancement:</strong> Developed backend enhancements in Python to improve system performance and reliability.</p>
+                <p><strong>Testing and Monitoring:</strong> Conducted performance and reliability testing post-optimization, ensuring stability and efficiency.</p>
+                <p><strong>Support and Maintenance:</strong> Provided continuous monitoring and support for optimized infrastructure, addressing any emerging issues promptly.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Enterprise Integration Services</h3>
+                <p><strong>Integration Requirements Analysis:</strong> Identified and documented requirements for integrating disparate systems and applications, focusing on data flow and interoperability.</p>
+                <p><strong>Backend Integration Development:</strong> Developed custom APIs and middleware solutions in Python for seamless system integration.</p>
+                <p><strong>Integration and End-to-End Testing:</strong> Performed thorough testing to ensure integrated systems function as intended and data is exchanged accurately.</p>
+                <p><strong>Deployment and Documentation:</strong> Managed integration deployments and provided comprehensive documentation to ensure smooth transitions to production environments.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>System Modernization and Legacy Migration</h3>
+                <p><strong>Legacy System Assessment:</strong> Analyzed existing legacy systems to identify modernization opportunities and challenges.</p>
+                <p><strong>Modernization Strategy and Design:</strong> Developed strategies for modernizing legacy systems, selecting appropriate technologies and migration paths.</p>
+                <p><strong>Python-Based System Development:</strong> Led backend development efforts using Python to rebuild or enhance legacy functionalities on new platforms.</p>
+                <p><strong>Migration Execution and Testing:</strong> Executed data and functionality migrations with minimal disruption, followed by rigorous testing to validate performance and reliability.</p>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact">
             <h2 class="section-title">Contact</h2>
-            <p>If you would like to connect or learn more about my work, feel free to reach out via email at <a href="mailto:deniswebdevprojects@gmail.com">your-email@example.com</a>.</p>
-            <a href="mailto:deniswebdevprojects@gmail.com" class="btn">Get in Touch</a>
+            <p>If you would like to connect or learn more about my work, feel free to reach out via email at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
+            <a href="mailto:your-email@example.com" class="btn">Get in Touch</a>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2022 Denis Stashuk. All rights reserved.</p>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </footer>
 </body>
 
